@@ -69,7 +69,7 @@ Come installare Navicella Cavallo su Windows:
 2. Installa python dal [sito ufficiale](https://www.python.org/) o dal [Microsoft Store](https://www.microsoft.com/en-us/p/python-39/9p7qfqmjrfp7#activetab=pivot:overviewtab)
    - Nota sull'installazione: qualsiasi versione di Python3 dovrebbe andare bene, per stare sul sicuro consiglio Python3.8 o Python3.9, poichè testate da me.
 3. Scarica l'intero pacchetto, premendo [qui](https://github.com/favmatteo/navicella-cavallo/archive/refs/heads/main.zip), ed estrailo in un percorso a tuo piacimento
-4. Apri il CMD - se sei su Windows 11 va bene anche Windows Terminal - e digita ```sh pip install pygame ```
-5. Una volta fatto ciò spostati sul percorso in cui si trova i file di gioco con ```sh cd path/to/folder ```
-6. Avvia il gioco con ```sh python main.py ```
+4. Apri il CMD - se sei su Windows 11 va bene anche Windows Terminal - e digita ``` pip install pygame ```
+5. Una volta fatto ciò spostati sul percorso in cui si trova i file di gioco con ``` cd path/to/folder ```
+6. Avvia il gioco con ```python main.py ```
 7. Divertiti!
