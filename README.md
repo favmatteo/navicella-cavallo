@@ -4,7 +4,7 @@ Navicella cavallo è un gioco 2D basato sullo stile dei giochi space shooter
 
 ![Una partita a Navicella Cavallo](https://i.imgur.com/TFerhsL.png)
 
-Come installare Navicella Cavallo su ambienti Linux
+## Come installare Navicella Cavallo su ambienti Linux
 
 Ubuntu e derivate:
 
@@ -58,7 +58,7 @@ cd navicella-cavallo
 python3 main.py
 ```
 
-Come installare Navicella Cavallo su Windows:
+## Come installare Navicella Cavallo su Windows:
 1. Esegui [questo script](https://pastebin.com/bLYxq1HT) per verificare se Python è installato sul tuo pc
   - Verifica l'output dello script
     - Se restituisce un output simile a 'Python was not found', vuol dire che nel tuo PC
