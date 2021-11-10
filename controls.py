@@ -121,30 +121,39 @@ class Control:
 
     def pressed_key(self):
         """Metodo che rileva gli input da tastiera ed esegue determinate operazioni in base ad esso"""
+        
+        velocity = [0, 0] # (x,y)
         keys = settings.pygame.key.get_pressed()
 
         # Movimenti:
         # Destra
         if ((keys[settings.pygame.K_RIGHT] or keys[settings.pygame.K_d])
                 and self.player.x + self.player.get_width() + settings.PLAYER_SPEED < settings.WIDTH) and not self.lost:
-            self.player.x += settings.PLAYER_SPEED
+            #self.player.x += settings.PLAYER_SPEED
+            velocity[0] = 1 
 
         # Sinistra
         if ((keys[settings.pygame.K_LEFT] or keys[
                 settings.pygame.K_a]) and self.player.x - settings.PLAYER_SPEED > 0) and not self.lost:
-            self.player.x -= settings.PLAYER_SPEED
+            #self.player.x -= settings.PLAYER_SPEED
+            velocity[0] = -1 
 
         # Su
         if ((keys[settings.pygame.K_UP] or keys[
                 settings.pygame.K_w]) and self.player.y - settings.PLAYER_SPEED > 0) and not self.lost:
-            self.player.y -= settings.PLAYER_SPEED
+            #self.player.y -= settings.PLAYER_SPEED
+            velocity[1] = -1 
 
         # Giù
         if ((keys[settings.pygame.K_DOWN] or keys[settings.pygame.K_s])
                 and self.player.y + self.player.get_height() + settings.PLAYER_SPEED < settings.HEIGHT) \
                 and not self.lost:
-            self.player.y += settings.PLAYER_SPEED
-
+            #self.player.y += settings.PLAYER_SPEED
+            velocity[1] = 1 
+		
+        self.player.x += velocity[0] * settings.PLAYER_SPEED * 50 * (1 / settings.FPS)
+        self.player.y += velocity[1] * settings.PLAYER_SPEED * 50 * (1 / settings.FPS)
+        
         # Se viene premuto il tasto spazio, e il cool down per sparare è <= 0 allora spara un laser
         if keys[settings.pygame.K_SPACE] and not self.lost:
             if self.player.cool_down_counter <= 0:
@@ -156,11 +165,11 @@ class Control:
     def move(self):
         """Metodo che si occupa di muovere ogni oggetto"""
         for en in self.enemies:
-            en.move(settings.ENEMY_SPEED)
+            en.move()
         for blt in self.bullets:
-            blt.move(settings.BULLET_SPEED)
+            blt.move()
         for heart in self.hearts:
-            heart.move(settings.HEART_SPEED)
+            heart.move()
         self.player.cool_down_counter -= 1
         self.heart_cool_down -= 1
 

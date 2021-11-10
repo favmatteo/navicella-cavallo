@@ -1,11 +1,25 @@
 import pygame
+import sys
 
 # Impostazioni finestra
-WIDTH = 800
-HEIGHT = 800
+try:
+	WIDTH = int(sys.argv[1])
+	HEIGHT = int(sys.argv[2])
+	if(not (400 <= WIDTH <= 800 or 400 <= HEIGHT <= 800)):
+		raise ValueError
+except ValueError:
+	WIDTH = 600
+	HEIGHT = 600
+	print("Argomenti non validi", file=sys.stderr)
 
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Navicella Cavallo")
+except IndexError:
+	WIDTH = 600
+	HEIGHT = 600
+	print("Dimensione di default impostata!")	
+
+finally:
+	WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+	pygame.display.set_caption("Navicella Cavallo")
 
 # FONT
 pygame.font.init()

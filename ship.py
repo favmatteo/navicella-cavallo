@@ -1,4 +1,4 @@
-from settings import *
+import settings
 
 """Classe astratta che rappresenta una navicella"""
 
@@ -31,7 +31,7 @@ class PlayerShip(Ship):
         """ Inizializza gli attributi della classe PlayerShip """
         super().__init__(x, y)
         self.cool_down_counter = 0
-        self.ship_img = YELLOW_SPACE_SHIP
+        self.ship_img = settings.YELLOW_SPACE_SHIP
 
 
 """Classe Nemico"""
@@ -43,12 +43,12 @@ class EnemyShip(Ship):
         """ Inizializza gli attributi della classe EnemyShip """
         super().__init__(x, y)
         self.colors = {
-            "red": RED_SPACE_SHIP,
-            "green": GREEN_SPACE_SHIP,
-            "blue": BLUE_SPACE_SHIP,
+            "red": settings.RED_SPACE_SHIP,
+            "green": settings.GREEN_SPACE_SHIP,
+            "blue": settings.BLUE_SPACE_SHIP,
         }
         self.ship_img = self.colors.get(color, self.colors[
             'red'])
 
-    def move(self, velocity):
-        self.y += velocity
+    def move(self):
+        self.y += settings.ENEMY_SPEED
