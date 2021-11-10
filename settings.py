@@ -5,7 +5,7 @@ import sys
 try:
 	WIDTH = int(sys.argv[1])
 	HEIGHT = int(sys.argv[2])
-	if(not (400 <= WIDTH <= 800 or 400 <= HEIGHT <= 800)):
+	if(not (400 <= WIDTH <= 800 and 400 <= HEIGHT <= 800)):
 		raise ValueError
 except ValueError:
 	WIDTH = 600
