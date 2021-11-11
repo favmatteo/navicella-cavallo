@@ -61,7 +61,8 @@ class Control:
 
         # Se hai perso, te lo comunica
         if self.lost:
-            settings.WIN.blit(lost_label, (round(settings.WIDTH / 2 - level_label.get_width() / 2), round(350)))
+            settings.WIN.blit(lost_label, (round(settings.WIDTH / 2 - level_label.get_width() / 2), 
+                                        (round(settings.HEIGHT / 2 - level_label.get_width() / 2)) + 50))
 
         # Disegna la navicella del giocatore
         self.player.draw(settings.WIN)
