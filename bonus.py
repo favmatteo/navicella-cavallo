@@ -1,13 +1,14 @@
 import settings
+from abc import ABC, abstractmethod
 
-
-class Bonus:
+class Bonus(ABC):
 
     def __init__(self, x, y):
         self.x = x
         self.y = y
         self.image = None
 
+    @abstractmethod
     def move(self):
         pass
 
