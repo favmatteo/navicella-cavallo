@@ -43,7 +43,6 @@ python3 main.py
 ```
 
 Arch Linux:
-_Il pacchetto al momento non si trova ancora nell'Arch User Repository (AUR)_
 
 ```sh
 # Aggiorna il sistema e scarica i pacchetti neccesari, in caso siano già presenti puoi reinstallarli 
